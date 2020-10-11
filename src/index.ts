@@ -1,10 +1,10 @@
+import { Command } from "commander";
 import { print } from "./action";
 
 function main() {
-  print();
+  const program = new Command();
+  program.command("print").alias("p").action(print);
+  program.parse(process.argv);
 }
-
-// * Handle local development with `npm start` or `yarn start`
-if (process.argv[3] === "start") main();
 
 export default main;
